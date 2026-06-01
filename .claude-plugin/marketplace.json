@@ -1,0 +1,30 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "animation_bench_job_inspector",
+  "owner": {
+    "name": "marathan24",
+    "url": "https://github.com/marathan24"
+  },
+  "metadata": {
+    "description": "Inspect Animation Bench jobs and generate benchmark-style local reports",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "animation_bench_job_inspector",
+      "source": "./",
+      "description": "Inspect Animation Bench jobs, artifacts, metrics, cost, and visual reports",
+      "version": "1.0.0",
+      "author": {
+        "name": "marathan24"
+      },
+      "homepage": "https://github.com/marathan24/animation_bench_job_inspector",
+      "repository": "https://github.com/marathan24/animation_bench_job_inspector",
+      "category": "development",
+      "strict": false,
+      "skills": [
+        "./skills/animation_bench_job_inspector"
+      ]
+    }
+  ]
+}

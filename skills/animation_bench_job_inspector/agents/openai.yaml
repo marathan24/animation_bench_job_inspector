@@ -1,0 +1,3 @@
+display_name: Animation Bench Job Inspector
+short_description: Inspect job reports, artifacts, and costs.
+default_prompt: Inspect the latest Animation Bench job and report candidate HTML, visual artifacts, metrics, model cost, and image/HAR usage proof.
