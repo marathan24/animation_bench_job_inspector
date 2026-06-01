@@ -127,6 +127,15 @@ fi
 
 reference_dir="$REPO_ROOT/harbor_tasks/$task_id/environment/src/input/screenshots"
 if [[ ! -d "$reference_dir" ]]; then
+  task_matches="$(find "$REPO_ROOT/harbor_tasks" -mindepth 1 -maxdepth 1 -type d -name "${task_id}*" -print 2>/dev/null | sort)"
+  task_match_count="$(printf '%s\n' "$task_matches" | sed '/^$/d' | wc -l | tr -d ' ')"
+  if [[ "$task_match_count" == "1" ]]; then
+    task_id="$(basename "$task_matches")"
+    reference_dir="$REPO_ROOT/harbor_tasks/$task_id/environment/src/input/screenshots"
+  fi
+fi
+
+if [[ ! -d "$reference_dir" ]]; then
   echo "Reference frame directory not found: $reference_dir" >&2
   echo "No strict scorer matched task '$task_id', and generic report generation needs reference frames." >&2
   exit 1
